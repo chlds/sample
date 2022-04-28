@@ -9,7 +9,7 @@ S = ./src/$(T).asm
 SS = ./src/*.asm
 
 OBJ = ./src/$(T).obj
-
+OSLIB = user32.lib gdi32.lib
 MAP = ./src/$(T).map
 EXE = ./$(T).exe
 
@@ -32,7 +32,7 @@ LIL = link.exe
 
 
 $(EXE): $(OBJ)
-	$(LIL) $(LILFLAGS) $(OBJ)
+	$(LIL) $(LILFLAGS) $(OBJ) $(OSLIB)
 
 
 $(OBJ): $(SRC) $(HDR)
